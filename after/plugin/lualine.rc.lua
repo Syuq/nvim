@@ -215,7 +215,7 @@ ins_right {
   padding = { left = 1 },
 }
 
-lualine.setup(config) {
+lualine.setup {
   options = {
     icons_enabled = true,
     theme = 'solarized_dark',
@@ -255,3 +255,5 @@ lualine.setup(config) {
   tabline = {},
   extensions = { 'fugitive' },
 }
+
+lualine.setup(config)
