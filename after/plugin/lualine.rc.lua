@@ -35,35 +35,54 @@ local conditions = {
 local config = {
   options = {
     -- Disable sections and component separators
+    icons_enabled = true,
+    --theme = 'solarized_dark',
+    -- section_separators = { left = '', right = '' },
+    -- component_separators = { left = '', right = '' },
     component_separators = '',
     section_separators = '',
+    disabled_filetypes = {},
     theme = {
       -- We are going to use lualine_c an lualine_x as left and
       -- right section. Both are highlighted by c theme .  So we
       -- are just setting default looks o statusline
       normal = { c = { fg = colors.fg, bg = colors.bg } },
       inactive = { c = { fg = colors.fg, bg = colors.bg } },
+      
     },
   },
   sections = {
-    -- these are to remove the defaults
-    lualine_a = {},
-    lualine_b = {},
-    lualine_y = {},
-    lualine_z = {},
-    -- These will be filled later
+    lualine_a = { },
+    lualine_b = { },
+    -- lualine_c = { {
+    --   'filename',
+    --   file_status = true, -- displays file status (readonly status, modified status)
+    --   path = 0 -- 0 = just filename, 1 = relative path, 2 = absolute path
+    -- } },
     lualine_c = {},
-    lualine_x = {},
+    lualine_x = {
+      { 'diagnostics', sources = { "nvim_diagnostic" }, symbols = { error = ' ', warn = ' ', info = ' ',
+        hint = ' ' } },
+      'encoding',
+      'filetype'
+    },
+    lualine_y = { 'progress' },
+    lualine_z = { 'location' }
   },
   inactive_sections = {
-    -- these are to remove the defaults
     lualine_a = {},
     lualine_b = {},
+    lualine_c = { {
+      'filename',
+      file_status = true, -- displays file status (readonly status, modified status)
+      path = 1 -- 0 = just filename, 1 = relative path, 2 = absolute path
+    } },
+    lualine_x = { 'location' },
     lualine_y = {},
-    lualine_z = {},
-    lualine_c = {},
-    lualine_x = {},
+    lualine_z = {}
   },
+  tabline = {},
+  extensions = { 'fugitive' },
 }
 
 -- Inserts a component in lualine_c at left section
@@ -213,47 +232,6 @@ ins_right {
   end,
   color = { fg = colors.blue },
   padding = { left = 1 },
-}
-
-lualine.setup {
-  options = {
-    icons_enabled = true,
-    theme = 'solarized_dark',
-    section_separators = { left = '', right = '' },
-    component_separators = { left = '', right = '' },
-    disabled_filetypes = {}
-  },
-  sections = {
-    lualine_a = { 'mode' },
-    lualine_b = { 'branch' },
-    lualine_c = { {
-      'filename',
-      file_status = true, -- displays file status (readonly status, modified status)
-      path = 0 -- 0 = just filename, 1 = relative path, 2 = absolute path
-    } },
-    lualine_x = {
-      { 'diagnostics', sources = { "nvim_diagnostic" }, symbols = { error = ' ', warn = ' ', info = ' ',
-        hint = ' ' } },
-      'encoding',
-      'filetype'
-    },
-    lualine_y = { 'progress' },
-    lualine_z = { 'location' }
-  },
-  inactive_sections = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = { {
-      'filename',
-      file_status = true, -- displays file status (readonly status, modified status)
-      path = 1 -- 0 = just filename, 1 = relative path, 2 = absolute path
-    } },
-    lualine_x = { 'location' },
-    lualine_y = {},
-    lualine_z = {}
-  },
-  tabline = {},
-  extensions = { 'fugitive' },
 }
 
 lualine.setup(config)

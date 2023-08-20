@@ -7,6 +7,7 @@ end
 vim.cmd [[packadd packer.nvim]]
 
 packer.startup(function(use)
+  use 'folke/tokyonight.nvim'
   use 'wbthomason/packer.nvim'
   use {
     'svrana/neosolarized.nvim',
