@@ -1,3 +1,6 @@
+-- Load Modules
+-- require('core')
+
 require('syuq.base')
 require('syuq.highlights')
 require('syuq.maps')
