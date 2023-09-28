@@ -10,6 +10,7 @@ vim.opt.fileencoding = 'utf-8'
 vim.wo.relativenumber = true
 vim.wo.number = true
 
+vim.o.mouse = ''
 vim.opt.title = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
