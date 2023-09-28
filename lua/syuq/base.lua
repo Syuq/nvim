@@ -4,8 +4,8 @@ vim.scriptencoding = 'utf-8'
 vim.opt.encoding = 'utf-8'
 vim.opt.fileencoding = 'utf-8'
 
-vim.opt.textwidth = 80
-vim.opt.colorcolumn = '+1'
+-- vim.opt.textwidth = 80
+-- vim.opt.colorcolumn = '+1'
 
 vim.wo.relativenumber = true
 vim.wo.number = true
