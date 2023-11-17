@@ -72,11 +72,11 @@ nvim_lsp.flow.setup {
   capabilities = capabilities
 }
 
-nvim_lsp.dartls.setup {
-  on_attach = on_attach,
-  filetypes = { "dart" },
-  capabilities = capabilities
-}
+-- nvim_lsp.dartls.setup {
+--   on_attach = on_attach,
+--   filetypes = { "dart" },
+--   capabilities = capabilities
+-- }
 
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
