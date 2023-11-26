@@ -1,22 +1,13 @@
-require('syuq.base')
-require('syuq.highlights')
-require('syuq.maps')
-require('syuq.plugins')
+if vim.loader then
+	vim.loader.enable()
+end
 
-local has = vim.fn.has
-local is_mac = has "macunix"
-local is_win = has "win32"
-local is_wsl = has "wsl"
+_G.dd = function(...)
+	require("util.debug").dump(...)
+end
+vim.print = _G.dd
 
-if is_mac then
-  require('syuq.macos')
-end
-if is_win then
-  require('syuq.windows')
-end
-if is_wsl then
-  require('syuq.wsl')
-end
-if vim.g.neovide then
-  require('syuq.neovide')
-end
+require("config.lazy")
+
+vim.opt.guifont = { "JetBrainsMono Nerd Font", ":h9" }
+
