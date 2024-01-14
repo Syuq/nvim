@@ -93,12 +93,15 @@ return {
 	{
 		"nvim-lualine/lualine.nvim",
 		event = "VeryLazy",
-		opts = {
-			options = {
-				-- globalstatus = false,
-				theme = "solarized_dark",
-			},
-		},
+		-- opts = {
+		-- 	options = {
+		-- 		icons_enabled = true,
+		-- 		component_separators = '|',
+		-- 		section_separators = '',
+		-- 		-- globalstatus = false,
+		-- 		-- theme = "solarized_dark",
+		-- 	},
+		-- },
 	},
 
 	-- filename
